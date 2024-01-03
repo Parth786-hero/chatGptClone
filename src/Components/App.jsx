@@ -55,8 +55,13 @@ function App(){
 
         }
     }
-    function lightUp(){
-        alert("This area is still under development ....");
+    function lightUp(e){
+        // alert("This area is still under development ....");
+        if(e.target.classList.contains("text")){
+            const value = e.target.textContent;
+            newQuestion = value;
+            trigger();
+        }
     }
     return(
         <>
@@ -89,16 +94,16 @@ function App(){
                     <div className="side-division-2" onClick={lightUp}>
                         <div className="side-division-2-icon">
                             <i className="fa-solid fa-house"></i>
-                            <span>Home</span>
+                            <span className='text'>Home</span>
                         </div>
                         <div className="side-division-2-icon">
                         <i className="fa-solid fa-bookmark"></i>
-                            <span>Bookmark</span>
+                            <span className='text'>Bookmark</span>
                         </div>
                         <div className="side-division-2-icon">
                             <i className="fa-solid fa-rocket"></i>
                             {/* <img src={Rocket} alt="" /> */}
-                            <span>Rocket</span>
+                            <span className='text'>Rocket</span>
                         </div>
                     </div>
                 </div>
